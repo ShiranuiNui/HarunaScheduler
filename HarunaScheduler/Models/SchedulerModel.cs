@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HarunaScheduler.Models
 {
-    public class SchedulerModel:DbContext
+    public class SchedulerContext:DbContext
     {
-        DbSet<Schedule> Schedules { get; set; }
+        public DbSet<Schedule> Schedules { get; set; }
     
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -18,7 +18,7 @@ namespace HarunaScheduler.Models
     public class Schedule
     {
         public int Id { get; set; }
-        public int Title { get; set; }
+        public string Title { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime StopTime { get; set; }
     }

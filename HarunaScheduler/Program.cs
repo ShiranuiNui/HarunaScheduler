@@ -14,6 +14,21 @@ namespace HarunaScheduler
     {
         public static void Main(string[] args)
         {
+            /*
+            using (var db = new Models.SchedulerContext())
+            {
+                db.Schedules.Add(new Models.Schedule { Title = "TESTSCHEDULE", StartTime = DateTime.Now, StopTime = DateTime.Now });
+                var count = db.SaveChanges();
+                Console.WriteLine("{0} records saved to database", count);
+
+                Console.WriteLine();
+                Console.WriteLine("All blogs in database:");
+                foreach (var blog in db.Schedules)
+                {
+                    Console.WriteLine(" - {0}",blog.Title);
+                }
+            }
+            */
             BuildWebHost(args).Run();
         }
 
