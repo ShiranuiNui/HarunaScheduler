@@ -20,6 +20,9 @@ namespace HarunaScheduler
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
+                .UseDefaultServiceProvider(options =>
+                    options.ValidateScopes = false)
+                .UseUrls("http://*:50120/")
                 .Build();
     }
 }
